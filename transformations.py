@@ -1678,6 +1678,11 @@ def is_same_transform(matrix0, matrix1):
     return numpy.allclose(matrix0, matrix1)
 
 
+def normalize_angle(input):
+    """Normalize angle to -Pi...Pi over z axis"""
+    return (input + np.pi) % (2 * np.pi) - np.pi
+
+
 def _import_module(module_name, warn=True, prefix='_py_', ignore='_'):
     """Try import all public attributes from module into global namespace.
 
