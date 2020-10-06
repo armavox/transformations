@@ -1681,6 +1681,10 @@ def is_same_transform(matrix0, matrix1):
 def normalize_angle(input):
     """Normalize angle to -Pi...Pi over z axis"""
     return (input + np.pi) % (2 * np.pi) - np.pi
+ 
+
+def normalize_0_2pi(input):
+    return (input + 2 * np.pi) % (2 * np.pi)
 
 
 def _import_module(module_name, warn=True, prefix='_py_', ignore='_'):
